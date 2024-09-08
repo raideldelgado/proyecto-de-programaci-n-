@@ -1,0 +1,56 @@
+@startuml
+skinparam ClassAttributeIconSize 0
+
+abstract class BEBIDA{
+    #nombre: String
+    #cantidad: int
+    #envace: String
+    #precio_compra: int
+    #precio_venta: int
+    #ganancia: int
+
+    +BEBIDA(String nombre, int cantidad, String envace, int precio_compra, int precio_venta)
+    +getNombre(): String
+    +setNombre(String nombre): void 
+    +getCantidad(): int
+    +setCantidad(int cantidad): void
+    +getEnvace(): String
+    +setEnvace(String envace): void
+    +getPrecio_compra(): int
+    +setPrecio_compra(int precio_compra): void
+    +getPrecio_venta(): int
+    +setPrecio_venta(int precio_venta): void
+    +getGanancia(): int
+    +setGanancia(int ganancia): void
+}
+
+class CERVEZA{
+    -volumen: int
+
+    +CERVEZA(int volumen, String nombre, int cantidad, String envace, int precio_compra, int precio_venta)
+    +getVolumen(): int
+    +setVolumen(int volumen): void
+}
+
+class LICOR{
+    -color: String
+
+    +LICOR(String color, String nombre, int cantidad, String envace, int precio_compra, int precio_venta)
+    +getColor(): String
+    +setColor(String color): void
+}
+
+
+class RON{
+    -tipo: String
+   
+    +RON(String tipo, String nombre, int cantidad, String envace, int precio_compra, int precio_venta)
+    +getTipo(): String
+    +setTipo(String tipo): void
+}
+
+BEBIDA <|-- LICOR
+BEBIDA <|-- RON
+BEBIDA <|-- CERVEZA
+
+@enduml
